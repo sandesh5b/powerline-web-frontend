@@ -370,9 +370,9 @@ angular.module('app.controllers').controller('groups',function ($scope, groups, 
       $scope.loading = true;
       groups.create($scope.data).then(function (group) {
         $scope.alert('Way to go! You\'ve created a new Powerline group. Invite your followers from the next screen or login via our website for group management features. Check your e-mail for more information.');
-        $scope.path('/group/' + group.id);
-        $scope.execApply();
-      )}, function (response) {
+          $scope.path('/group/' + group.id);
+          $scope.execApply();
+      }, function (response) {
         $scope.loading = false;
         if (response.data && response.data.errors) {
           _(response.data.errors).each(function (error) {
